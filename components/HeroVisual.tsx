@@ -12,102 +12,44 @@ const ORB_X = 0.37;  // Adjust left/right (0-1, where 0.5 is center)
 const ORB_Y = 0.38;  // Adjust up/down (0-1, where 0.5 is center)
 
 const CSS = `
-  .hv-root {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 580px;
-    overflow: visible;
-  }
-
-  /* Hero — now 110% wide so it dominates the right column */
-  .hv-hero {
-    position: absolute;
-    bottom: -4%;
-    right: -8%;
-    width: 100%;
-    max-width: 760px;
-    pointer-events: none;
-    z-index: 2;
-    
-  }
-  .hv-hero img {
-    width: 100%;
-    display: block;
-    mix-blend-mode: lighten;
-    filter: drop-shadow(0 0 60px rgba(0,200,255,0.35));
-  }
   @keyframes hvFloat {
     0%,100% { transform: translateY(0); }
     50%      { transform: translateY(-14px); }
   }
 
-  .hv-anchor {
-    position: absolute;
-    width: 0;
-    height: 0;
-    z-index: 20;
-    pointer-events: none;
-  }
-
-  .hv-track {
-    position: absolute;
-    border-radius: 50%;
-    border: 1px dashed rgba(0,210,255,0.22);
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-
-  .hv-cglow {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,210,255,0.18) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    animation: hvGlow 3s ease-in-out infinite;
-    pointer-events: none;
-  }
   @keyframes hvGlow {
     0%,100% { transform: translate(-50%,-50%) scale(1);   opacity:.6; }
     50%      { transform: translate(-50%,-50%) scale(1.6); opacity:1;  }
   }
 
+  @keyframes hvSpin { to { transform: rotate(360deg); } }
+
+  @keyframes hvUnspin { to { transform: rotate(-360deg); } }
+
+  .hv-hero img {
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 60px rgba(0,200,255,0.35));
+  }
+
+  .hv-cglow {
+    animation: hvGlow 3s ease-in-out infinite;
+  }
+
   .hv-owrap {
-    position: absolute;
-    top: 0; left: 0;
-    width: 0; height: 0;
     animation: hvSpin var(--dur) linear infinite;
     animation-delay: var(--dl);
   }
-  @keyframes hvSpin { to { transform: rotate(360deg); } }
 
   .hv-oicon {
-    position: absolute;
-    width: var(--sz);
-    height: var(--sz);
-    top: calc(-1 * var(--r));
-    left: calc(-1 * var(--sz) / 2);
-    border-radius: 50%;
-    overflow: hidden;
     animation: hvUnspin var(--dur) linear infinite;
     animation-delay: var(--dl);
     box-shadow:
       0 0 14px rgba(0,180,255,0.65),
       0 0 32px rgba(0,80,200,0.35);
     transition: box-shadow .3s;
-    cursor: pointer;
-    pointer-events: all;
   }
   .hv-oicon:hover {
     box-shadow: 0 0 28px rgba(0,220,255,.9), 0 0 56px rgba(0,150,255,.5);
-  }
-  @keyframes hvUnspin { to { transform: rotate(-360deg); } }
-
-  .hv-oicon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
   }
 `;
 
@@ -174,21 +116,27 @@ export default function HeroVisual() {
   }, []);
 
   return (
-    <div className="hv-root">
+    <div className="relative w-full h-full min-h-96 overflow-visible">
       <style>{CSS}</style>
 
-      <div className="hv-hero" ref={heroRef}>
-        <img src={IMG.hero} alt="Operational excellence" />
+      <div className="absolute bottom-[-4%] right-[-8%] w-full max-w-[760px] pointer-events-none z-20" ref={heroRef}>
+        <img src={IMG.hero} alt="Operational excellence" className="w-full block" />
       </div>
 
-      <div className="hv-anchor" ref={anchorRef}>
-        <div className="hv-cglow" style={{ width: 170, height: 170 }} />
-        <div className="hv-track" style={{ width: TRACK, height: TRACK }} />
+      <div className="absolute w-0 h-0 z-20 pointer-events-none" ref={anchorRef}>
+        <div 
+          className="hv-cglow absolute rounded-full bg-gradient-to-r from-cyan-900/20 to-transparent pointer-events-none" 
+          style={{ width: 170, height: 170, transform: 'translate(-50%, -50%)' }} 
+        />
+        <div 
+          className="hv-track absolute rounded-full border border-dashed border-cyan-500/20 pointer-events-none" 
+          style={{ width: TRACK, height: TRACK, transform: 'translate(-50%, -50%)' }} 
+        />
 
         {ICONS.map((icon) => (
           <div
             key={icon.alt}
-            className="hv-owrap"
+            className="hv-owrap absolute top-0 left-0 w-0 h-0"
             style={{
               "--dur": DUR,
               "--dl":  icon.delay,
@@ -196,8 +144,16 @@ export default function HeroVisual() {
               "--sz":  SZ,
             } as React.CSSProperties}
           >
-            <div className="hv-oicon">
-              <img src={icon.src} alt={icon.alt} />
+            <div 
+              className="hv-oicon absolute rounded-full overflow-hidden cursor-pointer pointer-events-auto"
+              style={{
+                width: 'var(--sz)',
+                height: 'var(--sz)',
+                top: 'calc(-1 * var(--r))',
+                left: 'calc(-1 * var(--sz) / 2)',
+              }}
+            >
+              <img src={icon.src} alt={icon.alt} className="w-full h-full object-cover rounded-full block" />
             </div>
           </div>
         ))}

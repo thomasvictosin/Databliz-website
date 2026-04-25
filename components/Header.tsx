@@ -1,88 +1,53 @@
+"use client";
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <>
-      <style>{`
-        /* ── Navbar ── */
-        .hero-nav {
-          position: relative;
-          z-index: 10;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 24px 60px;
-        }
+    <nav className="sticky top-0 z-50 flex items-center justify-between px-20 py-6 backdrop-blur-xl bg-white/3 shadow-lg max-lg:px-6 max-lg:py-4">
+      <a href="/" className="flex items-center gap-2 text-white font-bold tracking-tight text-2xl max-lg:text-xl">
+        <img src="/images/Databliz-logo.png" alt="Databliz Logo" className="h-8 w-auto max-lg:h-6" />
+      </a>
 
-        .hero-logo {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          color: #fff;
-          font-size: 22px;
-          font-weight: 700;
-          letter-spacing: -0.5px;
-          text-decoration: none;
-        }
+      <ul className="flex items-center gap-10 list-none max-lg:hidden">
+        {["Home","About","Services","Solutions","Contact Us"].map((item) => (
+          <li key={item}>
+            <a href="#" className="text-white/75 text-sm no-underline transition-colors duration-200 hover:text-white">
+              {item}
+            </a>
+          </li>
+        ))}
+      </ul>
 
-        .hero-logo-img {
-          height: 32px;
-          width: auto;
-        }
+      <button className="bg-white text-[#0a1560] px-6 py-3 rounded-full text-sm font-semibold cursor-pointer whitespace-nowrap transition-all duration-200 hover:bg-blue-100 hover:-translate-y-0.5 max-lg:px-4 max-lg:py-2 max-lg:text-xs">
+        Book Free Consultation
+      </button>
 
-        .hero-nav-links {
-          display: flex;
-          align-items: center;
-          gap: 40px;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="hidden max-lg:block text-white ml-4"
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
 
-        .hero-nav-links a {
-          color: rgba(255,255,255,0.75);
-          text-decoration: none;
-          font-size: 15px;
-          transition: color 0.2s;
-        }
-        .hero-nav-links a:hover { color: #fff; }
-
-        .hero-nav-cta {
-          background: #fff;
-          color: #0a1560;
-          border: none;
-          padding: 12px 24px;
-          border-radius: 50px;
-          font-size: 14px;
-          font-weight: 600;
-          cursor: pointer;
-          white-space: nowrap;
-          transition: background 0.2s, transform 0.15s;
-        }
-        .hero-nav-cta:hover {
-          background: #e8f4ff;
-          transform: translateY(-1px);
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 900px) {
-          .hero-nav { padding: 20px 24px; }
-          .hero-nav-links { display: none; }
-        }
-      `}</style>
-
-      {/* Navbar */}
-      <nav className="hero-nav">
-        <a href="/" className="hero-logo">
-          <img src="/images/Databliz-logo.png" alt="Databliz Logo" className="hero-logo-img" />
-        </a>
-
-        <ul className="hero-nav-links">
-          {["Home","About","Services","Solutions","Contact Us"].map((item) => (
-            <li key={item}><a href="#">{item}</a></li>
-          ))}
-        </ul>
-
-        <button className="hero-nav-cta">Book Free Consultation</button>
-      </nav>
-    </>
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur-lg border-b border-white/20 hidden max-lg:block">
+          <ul className="flex flex-col items-start gap-4 list-none p-6">
+            {["Home","About","Services","Solutions","Contact Us"].map((item) => (
+              <li key={item}>
+                <a href="#" className="text-white/75 text-sm no-underline transition-colors duration-200 hover:text-white">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 }
