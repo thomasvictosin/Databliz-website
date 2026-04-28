@@ -77,16 +77,21 @@ export default function HeroVisual() {
     function reposition() {
       const img = heroEl!.querySelector("img") as HTMLImageElement;
       if (!img) return;
+      
       const imgRect  = img.getBoundingClientRect();
       const rootRect = heroEl!.parentElement!.getBoundingClientRect();
+      
+      if (imgRect.width === 0 || imgRect.height === 0 || rootRect.width === 0) return;
+      
       const orbX = imgRect.left + imgRect.width  * ORB_X - rootRect.left;
       const orbY = imgRect.top  + imgRect.height * ORB_Y - rootRect.top;
+      
       anchorEl!.style.left = orbX + "px";
       anchorEl!.style.top  = orbY + "px";
       
       // Scale orbit based on image size
       const imgWidth = imgRect.width;
-      const orbitRadius = Math.round(imgWidth * 0.4); // 40% of image width
+      const orbitRadius = Math.round(imgWidth * 0.4);
       const trackSize = Math.round(orbitRadius * 2);
       
       const track = anchorEl!.querySelector(".hv-track") as HTMLElement;
@@ -100,19 +105,46 @@ export default function HeroVisual() {
         cglow.style.height = (trackSize + 40) + "px";
       }
       
-      // Update CSS variables for icon orbit
       const wraps = anchorEl!.querySelectorAll(".hv-owrap");
       wraps.forEach(wrap => {
         (wrap as HTMLElement).style.setProperty("--r", orbitRadius + "px");
       });
     }
 
-    const ro = new ResizeObserver(reposition);
-    ro.observe(heroEl.parentElement!);
+    function scheduleReposition() {
+      requestAnimationFrame(reposition);
+    }
+
     const img = heroEl.querySelector("img") as HTMLImageElement;
-    img?.addEventListener("load", reposition);
-    reposition();
-    return () => ro.disconnect();
+    
+    // Wait for image to load or use it if already loaded
+    const loadPromise = new Promise<void>((resolve) => {
+      if (img?.complete && img?.naturalWidth > 0) {
+        resolve();
+      } else {
+        img?.addEventListener("load", () => resolve(), { once: true });
+        setTimeout(resolve, 2000); // Fallback timeout
+      }
+    });
+
+    loadPromise.then(() => {
+      // Wait for next frame after image is loaded
+      requestAnimationFrame(() => {
+        requestAnimationFrame(scheduleReposition);
+      });
+    });
+
+    // Set up ResizeObserver for continuous updates
+    const ro = new ResizeObserver(scheduleReposition);
+    ro.observe(heroEl.parentElement!);
+    
+    // Also listen to window resize
+    window.addEventListener("resize", scheduleReposition);
+    
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", scheduleReposition);
+    };
   }, []);
 
   return (

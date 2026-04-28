@@ -2,7 +2,10 @@ import HeroVisual from "../components/HeroVisual";
 import Header from "../components/Header";
 import ModernOperations from "../components/ModernOperations";
 import Process from "../components/Process";
-import Methodology from "@/components/Methodology";
+import Methodology from "../components/Methodology";
+import Consultation from "../components/Consultation";
+import Footer from "../components/Footer";
+
 
 export default function HeroSection() {
   return (
@@ -10,7 +13,7 @@ export default function HeroSection() {
       <section 
         className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col"
         style={{
-          backgroundImage: 'url(/images/Hero-bg.png)',
+          backgroundImage: 'url(/images/Hero-bgg.png)',
           backgroundAttachment: 'fixed'
         }}
       >
@@ -53,6 +56,10 @@ export default function HeroSection() {
       <Process />
 
       <Methodology />
+
+      <Consultation />
+
+      <Footer />
     </>
   );
 }

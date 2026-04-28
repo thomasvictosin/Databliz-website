@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-export default function Header() {
+export default function ColoredHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -12,7 +12,7 @@ export default function Header() {
     { name: "About", href: "/about" },
     { name: "Solutions", href: "/our-solution" },
     { name: "Industries", href: "/industries" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Career", href: "/career" },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function Header() {
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
         <img
-          src="/images/Databliz-logo.png"
+          src="/images/Colored-databliz-logo.png"
           alt="Databliz Logo"
           className="h-8 w-auto max-lg:h-6"
         />
@@ -33,7 +33,7 @@ export default function Header() {
           <li key={item.name}>
             <Link
               href={item.href}
-              className="text-white/75 text-sm transition-colors duration-200 hover:text-white"
+              className="text-[#3E4095] text-sm transition-colors duration-200 hover:text-white"
             >
               {item.name}
             </Link>
@@ -41,8 +41,8 @@ export default function Header() {
         ))}
       </ul>
 
-      {/* CTA (Desktop only) */}
-      <button className="bg-white text-[#0a1560] px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:bg-blue-200 hover:-translate-y-0.5 max-lg:hidden">
+      {/* CTA Button (Desktop only) */}
+      <button className="bg-[#3E4095] text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:bg-blue-600 hover:-translate-y-0.5 max-lg:hidden">
         Book Free Consultation
       </button>
 
@@ -63,7 +63,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className="text-white/80 text-sm transition-colors duration-200 hover:text-white"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsOpen(false)} // closes menu on click
                 >
                   {item.name}
                 </Link>
@@ -73,7 +73,7 @@ export default function Header() {
 
           {/* Mobile CTA */}
           <div className="px-6 pb-6">
-            <button className="w-full bg-white text-[#0a1560] py-3 rounded-full text-sm font-semibold">
+            <button className="w-full bg-[#3E4095] text-white py-3 rounded-full text-sm font-semibold">
               Book Free Consultation
             </button>
           </div>
