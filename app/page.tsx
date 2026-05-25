@@ -12,7 +12,7 @@ export default function HeroSection() {
   return (
     <>
       <section 
-        className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-x-hidden flex flex-col max-lg:bg-fixed-none"
+        className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col max-lg:overflow-hidden"
         style={{
           backgroundImage: 'url(/images/Hero-bgg.png)',
           backgroundAttachment: typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches ? 'scroll' : 'fixed'

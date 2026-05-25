@@ -233,7 +233,7 @@ export default function HeroVisual() {
   return (
     <div
       ref={rootRef}
-      className="hv-root relative w-full h-full min-h-[300px] md:min-h-96 max-lg:min-h-full max-lg:w-screen max-lg:left-0"
+      className="hv-root relative w-full h-full min-h-[300px] md:min-h-96 max-lg:min-h-full max-lg:w-full max-lg:left-0"
     >
       <style>{CSS}</style>
 
