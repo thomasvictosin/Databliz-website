@@ -26,7 +26,7 @@ export default function SerpentineFinal() {
       </div>
 
       {/* The Central "S" Path */}
-      <div className="absolute inset-0 flex justify-center pt-60">
+      <div className="absolute inset-0 flex justify-center pt-60 sm:pt-60">
         <svg width="400" height="100%" viewBox="0 0 400 1000" fill="none" className="h-full">
           {/* Main Dashed Path */}
           <path
@@ -45,7 +45,7 @@ export default function SerpentineFinal() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex flex-col gap-y-26 pt-25">
+      <div className="relative z-10 flex flex-col gap-y-26 sm:gap-y-20 pt-25 sm:pt-10">
         {steps.map((step, idx) => (
           <div 
             key={step.id} 
@@ -55,7 +55,7 @@ export default function SerpentineFinal() {
             <div className="flex-shrink-0">
               <div className={`relative flex items-center ${step.color} text-white p-6 pr-14 rounded-full shadow-2xl max-w-[320px] min-h-[110px]`}>
                 <div className="flex flex-col">
-                  <h3 className="text-lg font-bold">{step.title}</h3>
+                  <h3 className="text-base md:text-lg sm:text-xl font-bold">{step.title}</h3>
                 </div>
                 {/* White Icon Circle */}
                 <div className="absolute right-2 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl">
