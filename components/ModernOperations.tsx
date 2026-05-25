@@ -73,7 +73,7 @@ const pillBase =
 const painPillClassMobile = "pl-4 pr-2 py-4 text-base before:mr-2";
 const painPillClassDesktop = "pl-4 pr-2 py-3 text-base before:mr-2";
 const painPillColClass = "flex flex-col w-max max-w-full";
-const painPillColClassMobile = "flex flex-col gap-4 md:gap-6 w-full min-w-0 flex-1";
+const painPillColClassMobile = "flex flex-col gap-4 md:gap-6 w-full min-w-0 flex-1 overflow-hidden";
 
 function PainPill({
   side,
