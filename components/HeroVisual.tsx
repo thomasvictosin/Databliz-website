@@ -238,7 +238,7 @@ export default function HeroVisual() {
       <style>{CSS}</style>
 
       <div
-        className="hv-hero-container absolute bottom-[-10%] -right-[7%] max-lg:bottom-auto max-lg:right-auto w-full max-w-[900px] max-lg:max-w-none pointer-events-none z-20 mix-blend-lighten"
+        className="hv-hero-container absolute bottom-[-10%] -right-[6.5%] max-lg:bottom-auto max-lg:right-auto w-full max-w-[900px] md:max-w-[700px] max-lg:max-w-none pointer-events-none z-20 mix-blend-lighten"
         ref={heroRef}
       >
         <img
