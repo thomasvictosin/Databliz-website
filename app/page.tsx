@@ -24,7 +24,7 @@ export default function HeroSection() {
         {/* Hero body */}
         <div className="relative flex-1 grid grid-cols-2 items-center px-10 pt-40 gap-16 max-lg:grid-cols-1 max-lg:px-0 max-lg:pt-16 max-lg:text-center max-lg:min-h-0">
           {/* Left column */}
-          <div className="flex flex-col gap-6 pb-60 max-lg:pb-0 max-lg:px-6 max-lg:items-center">
+          <div className="flex flex-col gap-6 max-lg:gap-3 pb-60 max-lg:pb-0 max-lg:px-6 max-lg:items-center">
             <h1 className="text-6xl max-lg:text-3xl font-black leading-tight text-white -tracking-tight">
             Business Process Automation & <br />Optimisation for UK Enterprises
 

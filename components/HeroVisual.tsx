@@ -179,7 +179,9 @@ export default function HeroVisual() {
       anchorEl!.style.top = orbY + "px";
 
       const imgWidth = imgRect.width;
-      const orbitRadius = Math.round(imgWidth * 0.3);
+      const bp = getBreakpoint();
+      const orbitMultiplier = bp === "tablet" ? 0.2 : 0.3;
+      const orbitRadius = Math.round(imgWidth * orbitMultiplier);
       const trackSize = Math.round(orbitRadius * 2);
 
       const track = anchorEl!.querySelector(".hv-track") as HTMLElement;
@@ -238,7 +240,7 @@ export default function HeroVisual() {
       <style>{CSS}</style>
 
       <div
-        className="hv-hero-container absolute bottom-[-10%] -right-[6.5%] max-lg:bottom-auto max-lg:right-auto w-full max-w-[900px] md:max-w-[700px] max-lg:max-w-none pointer-events-none z-20 mix-blend-lighten"
+        className="hv-hero-container absolute bottom-[-10%] -right-[6.5%] max-lg:bottom-auto max-lg:right-auto w-full max-w-[900px] md:max-w-[400px] max-md:max-w-none pointer-events-none z-20 mix-blend-lighten"
         ref={heroRef}
       >
         <img
