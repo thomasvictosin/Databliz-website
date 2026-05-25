@@ -16,7 +16,7 @@ export default function ColoredHeader() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between px-20 py-6 backdrop-blur-xl bg-white/10 shadow-lg max-lg:px-6 max-lg:py-4 relative">
+    <nav className="sticky top-0 z-50 flex items-center justify-between px-20 py-6 backdrop-blur-xl bg-transparent border-b border-white/15 shadow-none max-lg:px-6 max-lg:py-4 relative">
       
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
@@ -49,7 +49,8 @@ export default function ColoredHeader() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="hidden max-lg:block text-white ml-4"
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        className="hidden max-lg:block text-[#3E4095] ml-4"
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
@@ -73,7 +74,7 @@ export default function ColoredHeader() {
 
           {/* Mobile CTA */}
           <div className="px-6 pb-6">
-            <button className="w-full bg-[#3E4095] text-white py-3 rounded-full text-sm font-semibold">
+            <button className="w-full bg-white text-[#0a1560] py-3 rounded-full text-sm font-semibold">
               Book Free Consultation
             </button>
           </div>

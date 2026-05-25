@@ -21,31 +21,31 @@ const METHODOLOGY_STEPS: MethodologyStep[] = [
     number: 1,
     icon: <Users className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Discover",
-    description: "Map and baseline your operational systems.",
+    description: "We map your current processes and establish a performance baseline.",
   },
   {
     number: 2,
     icon: <BarChart3 className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Diagnose",
-    description: "Identify automation opportunities and bottlenecks.",
+    description: "We identify bottlenecks, manual friction points, and automation opportunities",
   },
   {
     number: 3,
     icon: <Zap className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Design",
-    description: "Model optimised workflows using simulation.",
+    description: "We model improved workflows using simulation — so you see results before we change anything",
   },
   {
     number: 4,
     icon: <Cog className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Deploy",
-    description: "Implement intelligent automation and improvements.",
+    description: "We implement automation and process improvements within your existing systems.",
   },
   {
     number: 5,
     icon: <TrendingUp className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Optimise",
-    description: "Continuously refine performance based on data.",
+    description: "We monitor performance and refine continuously — because operations should always be improving.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Methodology() {
               {/* Step Circle */}
               <div className="flex flex-col items-center w-full max-w-[250px]">
                 <div className="relative mb-6">
-                  <div className="w-24 h-24 md:w-28 md:h-28 bg-[#3d418e] rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-24 h-24 md:w-28 md:h-28 bg-[#3d418e] rounded-full flex items-center justify-center shadow-lg hover:scale-130 transition-transform duration-300">
                     {step.icon}
                   </div>
                   {/* Number Badge */}

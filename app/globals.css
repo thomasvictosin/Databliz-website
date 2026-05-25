@@ -24,3 +24,117 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.float-image {
+  animation: gentle-float 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.float-image-delayed {
+  animation-delay: 1.2s;
+}
+
+/* ModernOperations pain bullets — keyframes so entrance always runs (not dependent on Tailwind JIT). */
+@keyframes modern-ops-pain-in-l {
+  from {
+    opacity: 0;
+    transform: translate3d(-5.5rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes modern-ops-pain-in-r {
+  from {
+    opacity: 0;
+    transform: translate3d(5.5rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.modern-ops-pain-pill--left {
+  opacity: 0;
+  transform: translate3d(-5.5rem, 0, 0);
+  will-change: transform, opacity;
+}
+
+.modern-ops-pain-pill--right {
+  opacity: 0;
+  transform: translate3d(5.5rem, 0, 0);
+  will-change: transform, opacity;
+}
+
+.modern-ops-pain-pill--left.modern-ops-pain-pill--play {
+  animation: modern-ops-pain-in-l 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--modern-ops-stagger, 0ms);
+}
+
+.modern-ops-pain-pill--right.modern-ops-pain-pill--play {
+  animation: modern-ops-pain-in-r 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--modern-ops-stagger, 0ms);
+}
+
+/* Client logos — infinite horizontal marquee */
+@keyframes client-logos-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logos-marquee__track {
+  animation: client-logos-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.client-logos-marquee:hover .client-logos-marquee__track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logos-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    gap: 1rem;
+    padding-inline: 1.5rem;
+  }
+
+  .client-logos-marquee {
+    overflow: visible;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-ops-pain-pill--left,
+  .modern-ops-pain-pill--right {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  .modern-ops-pain-pill--left.modern-ops-pain-pill--play,
+  .modern-ops-pain-pill--right.modern-ops-pain-pill--play {
+    animation: none;
+  }
+}

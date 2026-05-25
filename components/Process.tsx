@@ -14,17 +14,32 @@ const TAGS_LEFT = [
   { label: "Scalability", color: "bg-orange-500" },
   { label: "compliance", color: "bg-green-600" },
   { label: "Reduce costs", color: "bg-blue-600" },
-];
+  { label: "Transformation", color: "bg-purple-600" },
+  { label: "Compliance", color: "bg-pink-600" },
+  { label: "Risk management", color: "bg-gray-600" },
+  { label: "Data security", color: "bg-teal-600" },
+  { label: "Data privacy", color: "bg-cyan-600" },
+  { label: "Automation Tools", color: "bg-amber-600" },
+  { label: "Synchronization", color: "bg-fuchsia-600" },
+  { label: "Integration", color: "bg-amber-600" },
+  ];
 
 const TAGS_RIGHT = [
-  { label: "Fast", color: "bg-emerald-500" },
-  { label: "Growth", color: "bg-indigo-600" },
-  { label: "Strong", color: "bg-rose-800" },
-  { label: "Pride", color: "bg-slate-700" },
-  { label: "Price", color: "bg-orange-500" },
-  { label: "Courage", color: "bg-green-600" },
-  { label: "Determine", color: "bg-blue-600" },
-  { label: "Method", color: "bg-purple-600" },
+  { label: "Process analysis", color: "bg-emerald-500" },
+  { label: "Monitoring", color: "bg-indigo-600" },
+  { label: "process management", color: "bg-rose-800" },
+  { label: "PDigitization", color: "bg-slate-700" },
+  { label: "Process mapping", color: "bg-orange-500" },
+  { label: "Resource optimization", color: "bg-green-600" },
+  { label: "Data-driven", color: "bg-blue-600" },
+  { label: "Process optimization", color: "bg-yellow-600" },
+  { label: "Productivity", color: "bg-purple-600" },
+  { label: "Business workflow", color: "bg-pink-600" },
+  { label: "Improvement", color: "bg-gray-600" },
+  { label: "SOP development", color: "bg-teal-600" },
+  { label: "Streamlining", color: "bg-cyan-600" },
+  { label: "Performance", color: "bg-amber-600" },
+  { label: "Strategy", color: "bg-fuchsia-600" },
 ];
 
 interface ThrowableSectionProps {
@@ -231,28 +246,33 @@ export default function ProcessPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-bold text-[#3d418e] mb-4">
-            Design Intelligent Processes.
+          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3d418e] mb-4">
+          Two Ways We Help UK
           </h1>
-          <h2 className="text-5xl font-bold text-[#3d418e] mb-10">
-            Deliver Measurable Impact
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3176B1] mb-10">
+             Businesses Run Better
           </h2>
-          <div className="space-y-2 text-slate-500 text-lg">
+          <div className="space-y-2 text-slate-500 text-sm sm:text-sm md:text-base lg:text-base">
             <p>Databiz helps organisations analyse, automate, and optimise their operational systems with precision.</p>
             <p>We combine structured process analysis, simulation modelling, and automation technologies to engineer sustainable performance improvements.</p>
           </div>
         </div>
 
         {/* Interactive Sections */}
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full md:max-w-xl md:mx-auto lg:max-w-none lg:mx-0">
           <ThrowableSection
             title="Process Automation"
-            description="We identify repetitive, rule-based tasks embedded within your operations and design automation solutions that eliminate manual friction."
+            description="We identify the manual, repetitive tasks that
+slow your team down and replace them with intelligent automation — integrated into the
+systems you already use.Result: Fewer errors, faster turnaround, lower operating costs"
             tags={TAGS_LEFT}
           />
           <ThrowableSection
             title="Process Optimization"
-            description="We analyse end-to-end workflows to identify constraints, inefficiencies, and performance gaps. Through simulation modelling, we test improvement scenarios."
+            description="We map your end-to-end workflows, model
+improvement scenarios using simulation, and redesign processes that actually perform —
+before a single change is implemented.Result: Higher throughput, shorter lead times,
+confident decisions"
             tags={TAGS_RIGHT}
           />
         </div>

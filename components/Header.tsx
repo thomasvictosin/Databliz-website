@@ -12,7 +12,7 @@ export default function Header() {
     { name: "About", href: "/about" },
     { name: "Solutions", href: "/our-solution" },
     { name: "Industries", href: "/industries" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Career", href: "/career" },
   ];
 
   return (
