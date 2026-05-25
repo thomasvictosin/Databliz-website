@@ -16,7 +16,7 @@ export default function Consultation() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 lg:text-left text-center lg:items-start items-center">
             <h2 className="text-4xl lg:text-5xl font-black leading-tight text-[#3E4095] -tracking-tight">
               From Complexity to Clarity
             </h2>
@@ -32,14 +32,14 @@ export default function Consultation() {
 
             <button className="w-fit flex items-center gap-3 bg-white text-[#0a1560] px-8 py-4 rounded-full font-semibold transition-all duration-200 hover:bg-white/95 hover:-translate-y-1 group">
               <span>Book Free Consultation</span>
-              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 transition-transform group-hover:translate-x-1 lg:block hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
 
           {/* Right Visual */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="hidden lg:flex justify-center lg:justify-end">
             <img 
               src="/images/curly-arrow.png" 
               alt="Curly arrow decoration"
