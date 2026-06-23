@@ -11,7 +11,7 @@ export default function ContactHero() {
             Contact Us
           </h1>
           <p className="text-blue-100/80 text-md">
-            Databliz delivers structured, data-driven solutions that eliminate inefficiencies and unlock operational scalability.
+            Have a question or project in mind? Get in touch with our team and we'll be happy to discuss how we can help.
           </p>
         </div>
       </div>

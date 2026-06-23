@@ -64,7 +64,7 @@ export default function VisionMission() {
                   </h3>
 
                   {/* Card Description */}
-                  <p className="text-slate-600 text-lg md:text-xl leading-relaxed font-light">
+                  <p className="text-slate-600 text-sm md:text-base sm:text-sm lg:text-base leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>

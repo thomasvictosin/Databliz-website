@@ -33,7 +33,7 @@ export default function WhyDatabliz() {
           </h2>
 
           {/* Paragraphs */}
-          <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
+          <div className="space-y-4 text-slate-600 text-sm md:text-base sm:text-sm lg:text-base leading-relaxed">
             <p>
               Modern organisations face increasing operational complexity. 
               Growth introduces interconnected systems, layered workflows, and 

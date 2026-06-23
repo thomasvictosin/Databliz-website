@@ -12,11 +12,8 @@ export default function HeroSection() {
   return (
     <>
       <section 
-        className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col max-lg:overflow-hidden"
-        style={{
-          backgroundImage: 'url(/images/Hero-bgg.png)',
-          backgroundAttachment: typeof window !== 'undefined' && window.matchMedia('(max-width: 1024px)').matches ? 'scroll' : 'fixed'
-        }}
+        className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat bg-local lg:bg-fixed flex flex-col max-lg:overflow-hidden"
+        style={{ backgroundImage: 'url(/images/Hero-bgg.png)' }}
       >
         
         <Header />
@@ -30,7 +27,7 @@ export default function HeroSection() {
 
             </h1>
             <p className="text-base max-lg:text-sm leading-relaxed text-white/65 max-w-md">
-            Databliz helps UK business owners eliminate manual processes, remove bottlenecks, and build operations that scale — without adding headcount.
+            Databliz helps UK Businesses eliminate manual processes, remove bottlenecks, and build operations that scale without adding headcount.
             </p>
             <button className="w-fit bg-white/95 text-[#0a1560] px-7 py-3.5 rounded-full text-sm max-lg:text-xs font-semibold transition-all duration-200 hover:bg-white hover:-translate-y-0.5">
               Book Free Consultation

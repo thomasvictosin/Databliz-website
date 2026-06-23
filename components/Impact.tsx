@@ -61,7 +61,7 @@ export default function SerpentineFinal() {
         <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
           How We Create Impact
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-sm md:text-base sm:text-sm lg:text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Through process intelligence, simulation modelling, and intelligent automation, we:
         </p>
       </div>

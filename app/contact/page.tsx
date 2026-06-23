@@ -17,6 +17,7 @@ const page = () => {
       <div className="px-8 bg-white">
           <ContactBody />
       </div>
+      
       <Footer />
       
     </>

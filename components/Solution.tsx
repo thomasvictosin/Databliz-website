@@ -148,8 +148,8 @@ const Solution = () => {
             </div>
 
             <p className="text-gray-700 leading-relaxed">
-              As a process automation consultant for UK SMEs, Databliz systematically reviews your
-              operations to find where automation will deliver the greatest return — then implements
+              As a process intelligence company for Uk enterprises, Databliz systematically reviews your
+              operations to find where automation will deliver the greatest return, then implements
               solutions that fit your existing infrastructure.
             </p>
 

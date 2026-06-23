@@ -28,7 +28,6 @@ const TAGS_RIGHT = [
   { label: "Process analysis", color: "bg-emerald-500" },
   { label: "Monitoring", color: "bg-indigo-600" },
   { label: "process management", color: "bg-rose-800" },
-  { label: "PDigitization", color: "bg-slate-700" },
   { label: "Process mapping", color: "bg-orange-500" },
   { label: "Resource optimization", color: "bg-green-600" },
   { label: "Data-driven", color: "bg-blue-600" },
@@ -252,7 +251,7 @@ export default function ProcessPage() {
           <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3176B1] mb-10">
              Businesses Run Better
           </h2>
-          <div className="space-y-2 text-slate-500 text-sm sm:text-sm md:text-base lg:text-base">
+          <div className="space-y-2 text-gray-600 text-sm sm:text-sm md:text-base lg:text-base">
             <p>Databiz helps organisations analyse, automate, and optimise their operational systems with precision.</p>
             <p>We combine structured process analysis, simulation modelling, and automation technologies to engineer sustainable performance improvements.</p>
           </div>
@@ -262,17 +261,14 @@ export default function ProcessPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full md:max-w-xl md:mx-auto lg:max-w-none lg:mx-0">
           <ThrowableSection
             title="Process Automation"
-            description="We identify the manual, repetitive tasks that
-slow your team down and replace them with intelligent automation — integrated into the
-systems you already use.Result: Fewer errors, faster turnaround, lower operating costs"
+            description="We identify the manual, repetitive tasks that slow your team down and replace them with intelligent automation integrated into the systems you already use, delivering fewer errors, faster execution, and reduced operating costs."
             tags={TAGS_LEFT}
           />
           <ThrowableSection
             title="Process Optimization"
             description="We map your end-to-end workflows, model
-improvement scenarios using simulation, and redesign processes that actually perform —
-before a single change is implemented.Result: Higher throughput, shorter lead times,
-confident decisions"
+improvement scenarios using simulation, and redesign processes that actually perform
+before a single change is implemented resulting in higher throughput, shorter lead times, confident decisions"
             tags={TAGS_RIGHT}
           />
         </div>

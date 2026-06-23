@@ -33,7 +33,7 @@ const METHODOLOGY_STEPS: MethodologyStep[] = [
     number: 3,
     icon: <Zap className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Design",
-    description: "We model improved workflows using simulation — so you see results before we change anything",
+    description: "We model improved workflows using simulation so you see results before we change anything",
   },
   {
     number: 4,
@@ -44,8 +44,8 @@ const METHODOLOGY_STEPS: MethodologyStep[] = [
   {
     number: 5,
     icon: <TrendingUp className="w-10 h-10 md:w-12 md:h-12 text-white" />,
-    title: "Optimise",
-    description: "We monitor performance and refine continuously — because operations should always be improving.",
+    title: "Monitor",
+    description: "We monitor performance and refine continuously because operations should always be improving.",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Methodology() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#3d418e] mb-4">
             Our Methodology
           </h2>
-          <p className="text-lg md:text-xl text-slate-600">
+          <p className="text-sm md:text-base sm:text-sm lg:text-base text-slate-600">
             A <span className="text-[#3d418e] font-semibold">Structured</span> Approach to Performance Engineering
           </p>
         </div>

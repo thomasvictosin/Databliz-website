@@ -130,8 +130,8 @@ export default function ModernOperations() {
             Modern Operations <br />
             <span className="text-[#3176B1] font-black">Pain Points</span>
           </h2>
-          <p className="text-sm md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Most UK SMEs run on processes that were never properly designed — they grew organically and now create
+          <p className="text-sm md:text-base sm:text-sm lg:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            Most UK Enterprises run on processes that were never properly designed, they grew organically and now create
             invisible drag on your performance.
           </p>
         </div>
