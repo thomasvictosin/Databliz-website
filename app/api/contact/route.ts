@@ -91,8 +91,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
-    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_EMAIL) {
-      return NextResponse.json({ error: "Server not configured" }, { status: 500 });
+    const requiredEnv = ['RESEND_API_KEY', 'CONTACT_EMAIL'] as const;
+    const missing = requiredEnv.filter((k) => !process.env[k]);
+    if (missing.length) {
+      // Return which env var names are missing (do NOT return values)
+      return NextResponse.json({ error: 'Server not configured', missing }, { status: 500 });
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
