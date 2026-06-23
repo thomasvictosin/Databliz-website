@@ -60,7 +60,7 @@ const ContactBody = () => {
         <p className='text-gray-600 text-md'>We would love to hear from you! Please fill out the form and we will get back to you as soon as possible.</p>
         <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full text-gray-600' aria-live="polite">
             <label htmlFor="name" className="sr-only">Name</label>
-            <input id="name" value={name} onChange={e => setName(e.target.value)} type="text" name="name" placeholder='Name' className='w-full border-2 rounded-lg p-2 text-gray-600' />
+            <input id="name" value={name} onChange={e => setName(e.target.value)} type="text" name="name" placeholder='Name' className='w-full border-1 border-gray-300 rounded-lg p-2 placeholder:text-gray-600 placeholder:font-light placeholder:text-opacity-50 placeholder:text-sm text-gray-600' />
 
             {/* Honeypot - hidden field to catch bots (kept out of tab order) */}
             <input
@@ -75,10 +75,10 @@ const ContactBody = () => {
             />
 
             <label htmlFor="email" className="sr-only">Email</label>
-            <input id="email" value={email} onChange={e => setEmail(e.target.value)} type="email" name="email" placeholder='Email' className='w-full border-2 rounded-lg p-2 text-gray-600' />
+            <input id="email" value={email} onChange={e => setEmail(e.target.value)} type="email" name="email" placeholder='Email' className='w-full border-1 border-gray-300 rounded-lg p-2 placeholder:text-gray-600 placeholder:font-light placeholder:text-opacity-50 placeholder:text-sm text-gray-600' />
 
             <label htmlFor="message" className="sr-only">Message</label>
-            <textarea id="message" value={message} onChange={e => setMessage(e.target.value)} name="message" placeholder='Message' rows={6} className='w-full border-2 rounded-lg p-2 text-gray-600' />
+            <textarea id="message" value={message} onChange={e => setMessage(e.target.value)} name="message" placeholder='Message' rows={6} className='w-full border-1 border-gray-300 rounded-lg p-2 placeholder:text-gray-600 placeholder:font-light placeholder:text-opacity-50 placeholder:text-sm text-gray-600' />
 
             <div className="min-h-[36px]">
               {status === 'loading' && (
@@ -95,7 +95,7 @@ const ContactBody = () => {
               )}
             </div>
 
-            <button type="submit" disabled={status === 'loading'} className='bg-[#3E4095] disabled:opacity-50 text-white px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:bg-blue-600 hover:-translate-y-0.5'>Submit</button>
+            <button type="submit" disabled={status === 'loading'} className='bg-[#3E4095] text-white px-6 py-3 rounded-full text-sm font-semibold cursor-pointer transition-all duration-200 hover:bg-[#3176B1] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#3176B1] disabled:opacity-50'>Submit</button>
         </form>
       </div>
     </div>
