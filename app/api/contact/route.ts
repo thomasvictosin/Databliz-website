@@ -67,7 +67,8 @@ export async function POST(request: Request) {
       }
 
       // update last timestamp (expire after 1 hour)
-      await redis.set(lastKey, String(now), 'PX', 60 * 60 * 1000);
+      // Upstash `set` accepts an options object (e.g. { px: ms }) rather than string flags
+      await redis.set(lastKey, String(now), { px: 60 * 60 * 1000 });
     } else {
       // fallback in-memory limiter for local dev
       const entry = INMEM.get(ip) ?? { count: 0, firstTs: now, lastTs: 0 };
