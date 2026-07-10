@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DDatabliz | Business Process Automation & Optimization Consultancy",
+  title: "Databliz | Business Process Automation & Optimization Consultancy",
   description: "Cut manual work and bottlenecks with Databliz. We map, simulate, and automate your business processes end-to-end — book a free consultation today.",
 };
 
