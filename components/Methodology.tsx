@@ -33,7 +33,7 @@ const METHODOLOGY_STEPS: MethodologyStep[] = [
     number: 3,
     icon: <Zap className="w-10 h-10 md:w-12 md:h-12 text-white" />,
     title: "Design",
-    description: "We model improved workflows using simulation so you see results before we change anything",
+    description: "We engineer improved workflows using data-informed models so you see results before anything is changed",
   },
   {
     number: 4,

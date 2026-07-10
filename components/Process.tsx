@@ -253,7 +253,7 @@ export default function ProcessPage() {
           </h2>
           <div className="space-y-2 text-gray-600 text-sm sm:text-sm md:text-base lg:text-base">
             <p>Databiz helps organisations analyse, automate, and optimise their operational systems with precision.</p>
-            <p>We combine structured process analysis, simulation modelling, and automation technologies to engineer sustainable performance improvements.</p>
+            <p>We combine structured process analysis, process modelling, and automation technologies to engineer sustainable performance improvements.</p>
           </div>
         </div>
 
@@ -266,9 +266,7 @@ export default function ProcessPage() {
           />
           <ThrowableSection
             title="Process Optimization"
-            description="We map your end-to-end workflows, model
-improvement scenarios using simulation, and redesign processes that actually perform
-before a single change is implemented resulting in higher throughput, shorter lead times, confident decisions"
+            description="We map your end-to-end workflows, explore improvement scenarios using data-driven models, and redesign processes that actually perform before a single change is implemented resulting in higher throughput, shorter lead times, confident decisions"
             tags={TAGS_RIGHT}
           />
         </div>
