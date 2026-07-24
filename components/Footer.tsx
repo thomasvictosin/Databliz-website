@@ -7,7 +7,9 @@ const Footer = () => {
         {/* Top Section - Follow Blog */}
         <div className="mb-12 pb-8 border-b border-white/20">
           <div className="flex items-center gap-4">
-            <span className="text-xl font-semibold">Follow Our <span className="underline">Blog</span></span>
+            <a href="/blog" className="text-xl font-semibold transition hover:opacity-75">
+              Follow Our <span className="underline">Blog</span>
+            </a>
             <div className="flex gap-4">
               <a href="#" className="hover:opacity-75 transition"><i className="fab fa-linkedin"></i></a>
               <a href="#" className="hover:opacity-75 transition"><i className="fab fa-circle"></i></a>
