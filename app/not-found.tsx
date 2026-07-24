@@ -21,7 +21,7 @@ export default function NotFound() {
         <p className="text-gray-400 mb-8 leading-relaxed">
           The page you're looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
-
+  
         {/* CTA Buttons */}
         <div className="flex flex-col gap-4">
           <Link

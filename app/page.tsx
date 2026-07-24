@@ -6,7 +6,7 @@ import ClientLogos from "../components/ClientLogos";
 import Consultation from "../components/Consultation";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
+import BookConsultationButton from "../components/BookConsultationButton";
 
 export default function HeroSection() {
   return (
@@ -29,9 +29,9 @@ export default function HeroSection() {
             <p className="text-base max-lg:text-sm leading-relaxed text-white/65 max-w-md">
             Databliz helps UK Businesses eliminate manual processes, remove bottlenecks, and build operations that scale without adding headcount.
             </p>
-            <button className="w-fit bg-white/95 text-[#0a1560] px-7 py-3.5 rounded-full text-sm max-lg:text-xs font-semibold transition-all duration-200 hover:bg-white hover:-translate-y-0.5">
+            <BookConsultationButton className="px-7 py-3.5 text-sm max-lg:text-xs bg-white/95 hover:bg-white">
               Book Free Consultation
-            </button>
+            </BookConsultationButton>
           </div>
 
           {/* Right column — the animated component centered */}

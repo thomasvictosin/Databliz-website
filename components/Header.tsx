@@ -2,15 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import BookConsultationButton from "./BookConsultationButton";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Solutions", href: "/our-solution" },
+    { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -27,23 +31,31 @@ export default function Header() {
       </Link>
 
       {/* Desktop Menu */}
-      <ul className="flex items-center gap-10 list-none max-lg:hidden">
-        {navLinks.map((item) => (
-          <li key={item.name}>
-            <Link
-              href={item.href}
-              className="text-white/75 text-sm transition-colors duration-200 hover:text-white"
-            >
-              {item.name}
-            </Link>
-          </li>
-        ))}
+      <ul className="flex items-center gap-2 list-none max-lg:hidden">
+        {navLinks.map((item) => {
+          const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+          return (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className={`rounded-full px-3 py-2 text-sm transition-colors duration-200 ${
+                  isActive
+                    ? "bg-[#3176B1] text-white"
+                    : "text-white/75 hover:bg-[#3176B1] hover:text-white"
+                }`}
+              >
+                {item.name}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
       {/* CTA (Desktop only) */}
-      <button className="bg-white text-[#0a1560] px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:bg-blue-200 hover:-translate-y-0.5 max-lg:hidden">
+      <BookConsultationButton className="px-6 py-3 text-sm max-lg:hidden">
         Book Free Consultation
-      </button>
+      </BookConsultationButton>
 
       {/* Mobile Menu Button */}
       <button
@@ -56,25 +68,33 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-lg border-b border-white/20 max-lg:block">
-          <ul className="flex flex-col gap-4 p-6">
-            {navLinks.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="text-white/80 text-sm transition-colors duration-200 hover:text-white"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+          <ul className="flex flex-col gap-2 p-6">
+            {navLinks.map((item) => {
+              const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className={`block rounded-full px-3 py-2 text-sm transition-colors duration-200 ${
+                      isActive
+                        ? "bg-[#3176B1] text-white"
+                        : "text-white/80 hover:bg-[#3176B1] hover:text-white"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Mobile CTA */}
           <div className="px-6 pb-6">
-            <button className="w-full bg-white text-[#0a1560] py-3 rounded-full text-sm font-semibold">
+            <BookConsultationButton className="w-full py-3 text-sm" fullWidth>
               Book Free Consultation
-            </button>
+            </BookConsultationButton>
           </div>
         </div>
       )}

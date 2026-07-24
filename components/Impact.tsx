@@ -65,16 +65,16 @@ export default function SerpentineFinal() {
           Through process intelligence, simulation modelling, and intelligent automation, we:
         </p>
       </div>
-      
-      {/*{/* Dashed Line Background *
+
+      {/* Dashed line background */}
       <div className="absolute top-[100px] sm:top-[2400px] flex justify-center pointer-events-none select-none z-0">
-        <img 
-          src="/images/curved-dashed-line.svg" 
-          alt="Curved dashed line" 
+        <img
+          src="/images/curved-dashed-line.svg"
+          alt="Curved dashed line"
           className="h-[900px] w-auto max-w-[420px] md:h-[1000px] md:max-w-[400px] lg:h-[1100px] lg:max-w-[600px]"
           draggable="false"
         />
-      </div> */}
+      </div>
       {/* Steps and Badges */}
       <div className="relative w-full max-w-[600px] h-[1000px] z-10 overflow-hidden px-2 sm:px-0">
         {steps.map((step, idx) => (

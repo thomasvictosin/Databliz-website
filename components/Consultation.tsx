@@ -1,5 +1,7 @@
 'use client';
 
+import BookConsultationButton from './BookConsultationButton';
+
 export default function Consultation() {
   return (
     <section className="relative w-full py-24 bg-[#E6E7FF] overflow-hidden">
@@ -30,12 +32,12 @@ export default function Consultation() {
               </p>
             </div>
 
-            <button className="w-fit flex items-center gap-3 bg-white text-[#0a1560] px-8 py-4 rounded-full font-semibold transition-all duration-200 hover:bg-white/95 hover:-translate-y-1 group">
+            <BookConsultationButton className="px-8 py-4 gap-3 group">
               <span>Book Free Consultation</span>
               <svg className="w-5 h-5 transition-transform group-hover:translate-x-1 lg:block hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </BookConsultationButton>
           </div>
 
           {/* Right Visual */}
