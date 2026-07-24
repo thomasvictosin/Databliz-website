@@ -71,9 +71,6 @@ async function wpFetch<T>(path: string): Promise<WordPressFetchResult<T>> {
     });
 
     if (!response.ok) {
-      const responseText = await response.text().catch(() => '');
-      console.error(`[wordpress] ${endpoint} failed with ${response.status}: ${responseText}`);
-
       return {
         data: [] as T,
         ok: false,
@@ -89,9 +86,7 @@ async function wpFetch<T>(path: string): Promise<WordPressFetchResult<T>> {
       totalPages: Number.isFinite(totalPages) && totalPages > 0 ? totalPages : undefined,
       ok: true,
     };
-  } catch (error) {
-    console.error(`[wordpress] ${endpoint} request failed`, error);
-
+  } catch {
     return {
       data: [] as T,
       ok: false,
